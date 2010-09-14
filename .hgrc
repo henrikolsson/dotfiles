@@ -1,0 +1,18 @@
+[defaults]
+log = -f -v
+
+[ui]
+username = Henrik Olsson <henrik@fixme.se>
+ignore = ~/.hgignore
+merge = /usr/bin/merge
+
+[extensions]
+hgext.record=
+hgext.convert=
+hgext.mq=
+hgext.graphlog =
+hgext.rebase=
+
+[convert]
+cvsps = builtin
+#cvsps = cvsps -A -u --cvs-direct -q -v

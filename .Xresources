@@ -1,0 +1,17 @@
+Emacs.font:            8x13
+Emacs.foreground:      white
+Emacs.background:      black
+Emacs.cursorColor:     green
+
+urxvt*urgentOnBell: true
+urxvt*font:            8x13
+urxvt*boldItalicFont:            8x13
+urxvt*italicFont:            8x13
+urxvt*foreground:      white
+urxvt*background:      black
+urxvt*color4: SkyBlue4
+urxvt*color12: SkyBlue3
+urxvt*saveLines: 5000
+urxvt*scrollBar: false
+urxvt*preeditStyle:     OverTheSpot,Root,None
+urxvt*print-pipe: cat > $(TMPDIR=$HOME mktemp urxvt.XXXXXX)

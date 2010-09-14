@@ -1,0 +1,75 @@
+(in-package :stumpwm)
+
+(set-prefix-key (kbd "C-i"))
+(set-font "8x13")
+
+(clear-window-placement-rules)
+
+(define-key *root-map* (kbd "c") "exec urxvt")
+(define-key *root-map* (kbd "C-l") "sprev")
+(define-key *root-map* (kbd "l") "sprev")
+;; (define-key *root-map* (kbd "C-s") "swank")
+(defcommand paste-x-selection () (:rest)
+    "Universal rat-less X paste."
+      (let ((cmd (concatenate 'string "insert " (get-x-selection))))
+             (eval-command cmd)))
+(define-key *root-map* (kbd "p") "paste-x-selection")
+(define-key *root-map* (kbd "q") "exec $(dmenu_path | dmenu -nb 'black' -nf 'lightskyblue' -sb 'lightskyblue' -sf 'black')")
+;; mode-line-click-hook
+;; mode-line-click-hook
+(defmacro replace-hook (hook fn)
+    `(remove-hook ,hook ,fn)
+      `(add-hook ,hook ,fn))
+(replace-hook *mode-line-click-hook*
+                            (lambda (mode-line button x y)
+                                              (grouplist)))
+
+;; turn on/off the mode line for the current head only.
+;;(setf stumpwm:*screen-mode-line-format*
+;;      (list "%w|%g|"
+;;            '(:eval (stumpwm:run-shell-command "date +%_I:%M:%S%p--%e-%a|tr -d [:cntrl:]" t))))
+;;Set the message and input box to the bottom right. This way it overlaps with mode-line.
+;;(mode-line)
+
+(setf *message-window-gravity* :top-right)
+(setf *input-window-gravity* :top-right)
+(set-bg-color "black")
+(set-fg-color "lightskyblue")
+(set-border-color "mediumslateblue")
+(setf *mode-line-frame-position* :top)
+(setf *mode-line-border-width* 0)
+(setf *mode-line-pad-x* 2)
+(setf *mode-line-background-color* "black")
+(setf *mode-line-foreground-color* "lightblue")
+
+;;(toggle-mode-line (current-screen) (current-head))
+;(echo "asdf")
+;; (mapc 'stumpwm:toggle-mode-line stumpwm:*screen-list*)
+
+;; (toggle-mode-line (car *screen-list*) (current-head))
+;; (toggle-mode-line (car (cdr *screen-list*)) (current-head))
+;; (current-screen)
+;; (current-screen)
+;; (current-head)
+;; (car (cdr *screen-list*))
+;; (car *screen-list*)
+
+;; (mapcar (function (lambda (x) (toggle-mode-line x (current-head)))) *screen-list*)
+
+(setf *mouse-focus-policy* :sloppy)
+
+(defun my-message (fmt &rest args)
+    (let ((*executing-stumpwm-command* nil))
+          (apply #'message fmt args)))
+
+;;(setf *screen-mode-line-format* (list "[%n] %w | " '(:eval (run-shell-command "/home/henrik/bin/modeline.sh" t))))
+(setf *mode-line-timeout* 1)
+(toggle-mode-line (current-screen) (current-head))
+
+;; (load "/usr/share/common-lisp/source/slime/swank-loader.lisp")
+;; (swank-loader:init)
+;; (setf stumpwm:*top-level-error-action* :break)
+;; (swank:create-server :port 4006
+;;                      :style swank:*communication-style*
+;;                      :dont-close t)
+
