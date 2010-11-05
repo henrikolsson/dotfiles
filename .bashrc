@@ -60,7 +60,7 @@ then
         . /etc/bash_completion
     fi
 
-    for temp in wine jdk1.6 android-sdk android-sdk-mac_86; do
+    for temp in wine jdk1.7 jdk1.6 android-sdk android-sdk-mac_86 maven3 maven2; do
         [ -e /opt/$temp ] && export PATH=/opt/$temp/bin:$PATH
         [ -e $HOME/opt/$temp ] && export PATH=$HOME/opt/$temp/bin:$PATH
     done
