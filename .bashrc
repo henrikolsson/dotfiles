@@ -101,6 +101,14 @@ then
         }
     }
     export TZ="Europe/Stockholm"
+    export WINEARCH=win32
+    export GTK2_RC_FILES="/etc/gtk-2.0/gtkrc:$HOME/.gtkrc-2.0"
+    export PATH=/usr/share/java/apache-ant/bin/:/opt/android-sdk/tools/:$PATH
+    if [ -f "${HOME}/.gnupg/gpg-agent.info" ]; then
+       . "${HOME}/.gnupg/gpg-agent.info"
+       export GPG_AGENT_INFO
+       export SSH_AUTH_SOCK
+    fi
 fi
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 
