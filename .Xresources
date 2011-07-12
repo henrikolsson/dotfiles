@@ -15,3 +15,5 @@ urxvt*saveLines: 5000
 urxvt*scrollBar: false
 urxvt*preeditStyle:     OverTheSpot,Root,None
 urxvt*print-pipe: cat > $(TMPDIR=$HOME mktemp urxvt.XXXXXX)
+urxvt*geometry:        120x35
+
