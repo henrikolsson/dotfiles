@@ -64,6 +64,8 @@ then
         [ -e /opt/$temp ] && export PATH=/opt/$temp/bin:$PATH
         [ -e $HOME/opt/$temp ] && export PATH=$HOME/opt/$temp/bin:$PATH
     done
+    [ -e /opt/jdk1.7 ] && export JAVA_HOME=/opt/jdk1.7
+    [ -e $HOME/opt/jdk1.7 ] && export JAVA_HOME=$HOME/opt/jdk1.7 
     [ -e /opt/jdk1.6 ] && export JAVA_HOME=/opt/jdk1.6
     [ -e $HOME/opt/jdk1.6 ] && export JAVA_HOME=$HOME/opt/jdk1.6
     [ -e /opt/android-sdk ] && export ANDROID_HOME=/opt/android-sdk
