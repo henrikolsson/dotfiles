@@ -1,7 +1,7 @@
-Emacs.font:            8x13
-Emacs.foreground:      white
-Emacs.background:      black
-Emacs.cursorColor:     green
+emacs.font:            8x13
+emacs.foreground:      white
+emacs.background:      black
+emacs.cursorColor:     green
 
 urxvt*urgentOnBell: true
 urxvt*font:            8x13
