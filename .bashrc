@@ -111,6 +111,16 @@ then
        export GPG_AGENT_INFO
        export SSH_AUTH_SOCK
     fi
+    for i in /etc/profile.d/*.sh ; do
+       if [ -r "$i" ]; then
+       if [ "${-#*i}" != "$-" ]; then 
+           . "$i"
+       else
+           . "$i" >/dev/null 2>&1
+       fi
+    fi
+done
+
 fi
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 
