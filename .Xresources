@@ -1,19 +1,81 @@
-emacs.font:            8x13
-emacs.foreground:      white
-emacs.background:      black
-emacs.cursorColor:     green
+emacs.font: 8x13
+emacs.foreground: white
+emacs.background: black
+emacs.cursorColor: green
 
 urxvt*urgentOnBell: true
-urxvt*font:            8x13
-urxvt*boldItalicFont:            8x13
-urxvt*italicFont:            8x13
-urxvt*foreground:      white
-urxvt*background:      black
+urxvt*font: 8x13
+urxvt*boldItalicFont: 8x13
+urxvt*italicFont: 8x13
+urxvt*foreground: white
+urxvt*background: black
 urxvt*color4: SkyBlue4
 urxvt*color12: SkyBlue3
 urxvt*saveLines: 5000
 urxvt*scrollBar: false
-urxvt*preeditStyle:     OverTheSpot,Root,None
+urxvt*preeditStyle: OverTheSpot,Root,None
 urxvt*print-pipe: cat > $(TMPDIR=$HOME mktemp urxvt.XXXXXX)
-urxvt*geometry:        120x35
+urxvt*geometry: 120x35
+urxvt*iconFile: /usr/share/icons/gnome/256x256/apps/utilities-terminal.png
+urxvt*perl-ext-common: default,matcher
+urxvt*url-launcher: /usr/bin/google-chrome
+urxvt*matcher.button: 1
+
+rxvt*urgentOnBell: true
+rxvt*font: 8x13
+rxvt*boldItalicFont: 8x13
+rxvt*italicFont: 8x13
+rxvt*foreground: white
+rxvt*background: black
+rxvt*color4: SkyBlue4
+rxvt*color12: SkyBlue3
+rxvt*saveLines: 5000
+rxvt*scrollBar: false
+rxvt*preeditStyle: OverTheSpot,Root,None
+rxvt*print-pipe: cat > $(TMPDIR=$HOME mktemp rxvt.XXXXXX)
+rxvt*geometry: 120x35
+rxvt*iconFile: /usr/share/icons/gnome/256x256/apps/utilities-terminal.png
+rxvt*perl-ext-common: default,matcher
+rxvt*url-launcher: /usr/bin/google-chrome
+rxvt*matcher.button: 1
+ 
+rxvt-unicode*urgentOnBell: true
+rxvt-unicode*font: 8x13
+rxvt-unicode*boldItalicFont: 8x13
+rxvt-unicode*italicFont: 8x13
+rxvt-unicode*foreground: white
+rxvt-unicode*background: black
+rxvt-unicode*color4: SkyBlue4
+rxvt-unicode*color12: SkyBlue3
+rxvt-unicode*saveLines: 5000
+rxvt-unicode*scrollBar: false
+rxvt-unicode*preeditStyle: OverTheSpot,Root,None
+rxvt-unicode*print-pipe: cat > $(TMPDIR=$HOME mktemp rxvt-unicode.XXXXXX)
+rxvt-unicode*geometry: 120x35
+rxvt-unicode*iconFile: /usr/share/icons/gnome/256x256/apps/utilities-terminal.png
+rxvt-unicode*perl-ext-common: default,matcher
+rxvt-unicode*url-launcher: /usr/bin/google-chrome
+rxvt-unicode*matcher.button: 1
+yeahconsole*xOffset: 1920
+yeahconsole*screenWidth: 1920
+yeahconsole*term: urxvt
+yeahconsole*consoleHeight: 35
+yeahconsole*toggleKey: None+F2
+yeahconsole*aniDelay: 0
+yeahconsole*stepSize: 25
+yeahconsole*urgentOnBell: true
+yeahconsole*font: 8x13
+yeahconsole*boldItalicFont: 8x13
+yeahconsole*italicFont: 8x13
+yeahconsole*foreground: white
+yeahconsole*background: black
+yeahconsole*color4: SkyBlue4
+yeahconsole*color12: SkyBlue3
+yeahconsole*saveLines: 5000
+yeahconsole*scrollBar: false
+yeahconsole*preeditStyle: OverTheSpot,Root,None
+yeahconsole*print-pipe: cat > $(TMPDIR=$HOME mktemp yeahconsole.XXXXXX)
+yeahconsole*perl-ext-common: default,matcher
+yeahconsole*url-launcher: /usr/bin/google-chrome
+yeahconsole*matcher.button: 1
 
