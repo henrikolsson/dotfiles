@@ -119,6 +119,7 @@ then
            . "$i" >/dev/null 2>&1
        fi
     fi
+    export PATH="$HOME/.cask/bin:$PATH"
 done
 
 fi
