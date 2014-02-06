@@ -2,6 +2,8 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 REL="$(lsb_release -sc)"
 cd "$DIR"
+chmod 600 .ssh
+chmod 600 .ssh/config
 find . -type f -not -path "./.git/*" -not -path "./install.sh" -not -path "./override/*" | while read file
 do
     d=$(dirname "$file")
