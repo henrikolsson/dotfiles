@@ -56,7 +56,7 @@ rxvt-unicode*iconFile: /usr/share/icons/gnome/256x256/apps/utilities-terminal.pn
 rxvt-unicode*perl-ext-common: default,matcher
 rxvt-unicode*url-launcher: /usr/bin/google-chrome
 rxvt-unicode*matcher.button: 1
-yeahconsole*xOffset: 1920
+yeahconsole*xOffset: 0
 yeahconsole*screenWidth: 1920
 yeahconsole*term: urxvt
 yeahconsole*consoleHeight: 35
