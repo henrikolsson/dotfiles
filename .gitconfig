@@ -6,3 +6,10 @@
 	outgoing = log @{u}..
 [push]
 	default = simple
+[color]
+	ui = auto
+
+[alias]
+        fl = log --graph --stat --decorate --all
+        st = status
+        ci = commit
