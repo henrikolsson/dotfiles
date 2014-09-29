@@ -1,5 +1,12 @@
 if [[ -n "$PS1" ]]
 then
+    if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+        . /etc/bash_completion
+    fi
+    if [ -f /usr/share/git-core/contrib/completion/git-prompt.sh ]
+    then
+        source /usr/share/git-core/contrib/completion/git-prompt.sh
+    fi
     HISTCONTROL=ignoredups:ignorespace
     shopt -s histappend
     export HISTFILESIZE=500000
@@ -10,7 +17,7 @@ then
         debian_chroot=$(cat /etc/debian_chroot)
     fi
     
-    export PS1='\n[\t] <\u@\H:\w>\n[\\$:$?] -> '
+    export PS1='\n[\t] <\u@\H:\w>$(__git_ps1)\n[\\$:$?] -> '
     case "$TERM" in
         xterm*|rxvt*)
             export PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
@@ -56,9 +63,6 @@ then
     alias la='ls -A'
     alias l='ls -CF'
 
-    if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-        . /etc/bash_completion
-    fi
 
     for temp in wine jdk1.7 jdk1.6 android-sdk android-sdk-mac_86 maven3 maven2; do
         [ -e /opt/$temp ] && export PATH=/opt/$temp/bin:$PATH
@@ -84,6 +88,8 @@ then
     alias cal='cal -m'
     alias tmux='tmux -u'
     alias screen="screen -e '^Bb'"
+    alias serve='python -m SimpleHTTPServer'
+    alias jsonpp='python -m json.tool'
 
     [ -f /usr/bin/ack-grep ] && alias ack='/usr/bin/ack-grep'
 
@@ -125,3 +131,4 @@ done
 fi
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 
+source /etc/bash_completion.d/password-store
