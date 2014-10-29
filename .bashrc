@@ -131,4 +131,3 @@ done
 fi
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 
-source /etc/bash_completion.d/password-store
